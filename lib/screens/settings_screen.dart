@@ -180,7 +180,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const UpdateSection(),
               const ListTile(
                 leading: Icon(Icons.school_outlined),
-                title: Text('ВГУИТ Студент'),
+                title: Text('ВГУИТ Помощник'),
                 subtitle: Text('Карта, расписание и рейтинг ВГУИТ'),
               ),
             ],

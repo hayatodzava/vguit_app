@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
       listenable: _themeController,
       builder: (context, _) {
         return MaterialApp(
-          title: 'ВГУИТ Студент',
+          title: 'ВГУИТ Помощник',
           debugShowCheckedModeBanner: false,
           themeMode: _themeController.themeMode,
           theme: ThemeData(

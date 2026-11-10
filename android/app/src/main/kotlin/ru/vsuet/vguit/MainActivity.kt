@@ -1,4 +1,4 @@
-package com.example.vguit_app
+﻿package ru.vsuet.vguit
 
 import android.content.Intent
 import android.net.Uri

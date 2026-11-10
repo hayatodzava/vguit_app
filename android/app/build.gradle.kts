@@ -24,7 +24,7 @@ val buildingRelease = gradle.startParameter.taskNames.any {
 }
 
 android {
-    namespace = "com.example.vguit_app"
+    namespace = "ru.vsuet.vguit"
     // flutter_local_notifications 23 и androidx.core 1.19 требуют API 37.
     // Flutter 3.47 по умолчанию собирает под 36, поэтому задаём явно.
     compileSdk = 37
@@ -38,8 +38,9 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.vguit_app"
+        // Постоянный идентификатор приложения: менять после публикации нельзя,
+        // иначе для системы это будет другое приложение и обновления не встанут.
+        applicationId = "ru.vsuet.vguit"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

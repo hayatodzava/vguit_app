@@ -10,7 +10,7 @@
     <!-- Установка скачанного обновления (Android 8+ выдаёт пользователь). -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <application
-        android:label="vguit_app"
+        android:label="ВГУИТ Помощник"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

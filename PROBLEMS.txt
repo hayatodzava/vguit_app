@@ -198,8 +198,12 @@
 
 РЕЛИЗ
 -----
-[ ] applicationId = com.example.vguit_app
-[ ] релиз подписывается debug-ключом
-[ ] android:label = vguit_app (имя на иконке)
+[x] applicationId = ru.vsuet.vguit (изменён до первой публикации)
+[x] релиз подписывается своим ключом: signingConfig читает android/key.properties,
+    без него release-сборка падает с понятным сообщением
+[x] android:label = «ВГУИТ Помощник»
+[x] в настройках больше нет захардкоженной версии — берётся из манифеста
+[x] git-репозиторий инициализирован, первый коммит сделан
+[x] ключи подписи исключены из git (.gitignore)
+[ ] заполнить android/key.properties (пароли от vguit-release.jks)
 [ ] README и описание в pubspec — шаблонные
-[ ] в настройках захардкожена версия 1.0.0
