@@ -53,5 +53,10 @@ app.*.map.json
 *.jks
 *.keystore
 
+# Рабочие документы разработки (остаются локально)
+/CODE_REVIEW.md
+/PROBLEMS.txt
+/analyze_out.txt
+
 # Widget Preview related
 .widget_preview/
