@@ -7,6 +7,7 @@ import '../models/schedule.dart';
 import '../services/net.dart';
 import '../services/schedule_cache.dart';
 import '../services/schedule_parser.dart';
+import '../services/schedule_preferences.dart';
 import '../services/schedule_sources.dart';
 import '../widgets/error_banner.dart';
 import '../widgets/error_dialog.dart';
@@ -79,7 +80,38 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   void initState() {
     super.initState();
     _rowsVertical.addListener(_syncVerticalScroll);
-    _loadFromCacheOrServer();
+    _restoreAndLoad();
+  }
+
+  /// Поднимает сохранённые курс и группу, затем грузит расписание.
+  Future<void> _restoreAndLoad() async {
+    try {
+      final prefs = const SchedulePreferences();
+      final course = await prefs.loadCourse();
+      final group = await prefs.loadGroup();
+      if (!mounted) return;
+      setState(() {
+        if (course != null && _courses.contains(course)) {
+          _selectedCourse = course;
+        }
+        // Группа применится в _applySchedule, если она есть на этом листе.
+        _selectedGroup = group;
+      });
+    } catch (_) {
+      // Настройки недоступны — просто открываем значения по умолчанию.
+    }
+    await _loadFromCacheOrServer();
+  }
+
+  Future<void> _saveStudentsPreferences() async {
+    try {
+      await const SchedulePreferences().saveStudents(
+        course: _selectedCourse,
+        group: _selectedGroup,
+      );
+    } catch (_) {
+      // Не критично: в следующий раз откроется вид по умолчанию.
+    }
   }
 
   @override
@@ -200,6 +232,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       _selectedGroup = null;
       _groupCatalog = null;
     });
+    await _saveStudentsPreferences();
     await _loadFromCacheOrServer();
   }
 
@@ -211,6 +244,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     });
     try {
       await _parseCurrent();
+      await _saveStudentsPreferences();
     } catch (error) {
       _handleError(error, 'Не удалось разобрать расписание');
     }
@@ -304,6 +338,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       _selectedGroup = group;
       _rebuildGeometry();
     });
+    await _saveStudentsPreferences();
   }
 
   /// Пересчитывает строки, высоты и ширину под текущий набор колонок.

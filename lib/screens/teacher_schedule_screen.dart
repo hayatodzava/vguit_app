@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/teacher_schedule.dart';
 import '../services/net.dart';
+import '../services/schedule_preferences.dart';
 import '../services/teacher_service.dart';
 import '../widgets/error_banner.dart';
 import '../widgets/error_dialog.dart';
@@ -43,10 +44,28 @@ class _TeacherScheduleScreenState extends State<TeacherScheduleScreen> {
   @override
   void initState() {
     super.initState();
-    _initTeachers();
+    _restoreAndInit();
   }
 
-  Future<void> _initTeachers() async {
+  /// Поднимает сохранённого преподавателя и день, затем грузит список.
+  Future<void> _restoreAndInit() async {
+    String? teacher;
+    String? day;
+    try {
+      const prefs = SchedulePreferences();
+      teacher = await prefs.loadTeacher();
+      day = await prefs.loadTeacherDay();
+    } catch (_) {
+      // Настройки недоступны — открываем экран без выбранного преподавателя.
+    }
+    if (!mounted) return;
+    if (day != null && _daysOrder.contains(day)) {
+      setState(() => _selectedDay = day);
+    }
+    await _initTeachers(restoreTeacher: teacher);
+  }
+
+  Future<void> _initTeachers({String? restoreTeacher}) async {
     setState(() {
       _loadingTeachers = true;
       _error = null;
@@ -56,13 +75,39 @@ class _TeacherScheduleScreenState extends State<TeacherScheduleScreen> {
       if (cached != null && cached.isNotEmpty) {
         if (!mounted) return;
         setState(() => _teachers = cached);
-        return;
+      } else {
+        await _refreshTeachers();
       }
-      await _refreshTeachers();
     } catch (error) {
       _handleError(error, 'Не удалось загрузить список преподавателей');
     } finally {
       if (mounted) setState(() => _loadingTeachers = false);
+    }
+    await _applySavedTeacher(restoreTeacher);
+  }
+
+  /// Выбирает сохранённого преподавателя, если он есть в списке.
+  Future<void> _applySavedTeacher(String? name) async {
+    if (name == null || !mounted) return;
+    if (!_teachers.contains(name)) return;
+    final savedDay = _selectedDay;
+    await _selectTeacher(name);
+    if (!mounted) return;
+    if (savedDay != null && savedDay != _selectedDay) {
+      setState(() => _selectedDay = savedDay);
+      // Возвращаем день в настройки: _selectTeacher сохранил его сброшенным.
+      await _saveTeacherPreferences();
+    }
+  }
+
+  Future<void> _saveTeacherPreferences() async {
+    try {
+      await const SchedulePreferences().saveTeacher(
+        teacher: _selectedTeacher,
+        day: _selectedDay,
+      );
+    } catch (_) {
+      // Не критично: в следующий раз откроется экран без выбора.
     }
   }
 
@@ -102,12 +147,13 @@ class _TeacherScheduleScreenState extends State<TeacherScheduleScreen> {
           _lessons = cached;
           _lastUpdated = at;
         });
-        return;
+      } else {
+        await _refreshSchedule();
       }
-      await _refreshSchedule();
     } catch (error) {
       _handleError(error, 'Не удалось загрузить расписание преподавателя');
     }
+    await _saveTeacherPreferences();
   }
 
   Future<void> _refreshSchedule() async {
@@ -222,9 +268,12 @@ class _TeacherScheduleScreenState extends State<TeacherScheduleScreen> {
                     ),
                   ),
                 ],
-                onChanged: (value) => setState(
-                  () => _selectedDay = value == _allDays ? null : value,
-                ),
+                onChanged: (value) async {
+                  setState(
+                    () => _selectedDay = value == _allDays ? null : value,
+                  );
+                  await _saveTeacherPreferences();
+                },
               ),
               if (_lastUpdated != null)
                 Padding(
