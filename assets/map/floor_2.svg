@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" width="1795.33" height="1112.92" viewBox="0 0 1795.33 1112.92">
+  <g>
+    <polygon points="1365.86 353.58 1365.86 404.72 1343.96 404.72 1343.96 419.22 1343.96 435.12 1343.96 455.86 1334.78 455.86 1330.84 455.86 1318.76 455.86 1318.76 435.12 1318.76 419.22 1318.76 404.72 1297.76 404.72 1297.76 353.58 1316.78 353.58 1330.84 353.58 1365.86 353.58" fill="#f2f6f9"/>
+    <path d="M1297.76,404.72v51.14h-124.81c-1.76,0-3.2-1.44-3.2-3.2v-44.76h38.01v-54.32h90v51.14Z" fill="#f2f6f9"/>
+    <path d="M684.71,799.28v24.96c0,1.75-1.44,3.19-3.2,3.19h-73.99c-1.76,0-3.04-1.44-3.04-3.19v-24.96h80.23Z" fill="#f2f6f9"/>
+    <polygon points="622.45 783.97 622.45 799.28 604.48 799.28 604.48 743.85 622.45 743.85 622.45 753.98 622.45 772.57 622.45 783.97" fill="#f2f6f9"/>
+    <polygon points="622.45 726.38 622.45 743.85 604.48 743.85 604.48 703.58 622.45 703.58 622.45 726.38" fill="#f2f6f9"/>
+    <path d="M1793.83,1071.95v36.28c0,1.76-1.44,3.19-3.2,3.19h-68.4v-96.9h71.6v57.43Z" fill="#b8d8ff"/>
+    <path d="M1793.83,888.16v126.36h-71.6v-132.75c0,1.76,1.44,3.2,3.2,3.2h65.2c1.76,0,3.2,1.43,3.2,3.19Z" fill="#b8d8ff"/>
+    <path d="M287.09,978.6v-74.14h50.09v-291.18h-17.65c1.76,0,3.2-1.44,3.2-3.2v-104.5h-111.08v50.96h-33.56c-1.75,0-3.19-1.43-3.19-3.19v-72.4h212.65v-49.54h35.4v49.54h327.28v17.58c0,1.76,1.44,3.2,3.2,3.2h22.62v58.35h689.1v-239.66l-30.48-.25.19-23.05v-138.04h30.29V1.5h69.46c1.76,0,3.03,1.44,3.03,3.2v314.02h-43.68v241.36h228.27v551.34h-52.77v-188.6h-84.67v-37.06c0-1.75,1.44-3.19,3.2-3.19h92.57v-153.75h-59.81v-30.3h59.81v-46.89h-20.4v-66.81h-937.89v-79.24h-334.02v105.3c0,.95.42,1.81,1.09,2.4h-16.76v49.06h249.87v41.24h-17.97v-19.88h-138.6v13.35h-40.5v-13.35h-52.8v220.76h10.8v74.14h331.69v31.8h-342.49v63.47h-38.1v-63.47H1.5v-31.8h285.59Z" fill="#f2f6f9"/>
+    <polygon points="1722.23 501.57 1722.23 560.08 1703.66 560.08 1685.66 560.08 1612.76 560.08 1592.96 560.08 1592.96 501.57 1722.23 501.57" fill="#b8d8ff"/>
+    <path d="M1722.23,501.57h-228.27v-182.85h43.68v-74.3h17.58l166.53,255.39c.32.48.48,1.12.48,1.76Z" fill="#c4c4c4"/>
+    <path d="M1680.56,857.52v25.05h-62.85c1.76,0,3.04-1.44,3.04-3.2v-57.15h59.81v35.3Z" fill="#b8d8ff"/>
+    <polygon points="1680.56 815.22 1680.56 822.22 1620.75 822.22 1620.75 764.32 1680.56 764.32 1680.56 796.92 1680.56 815.22" fill="#b8d8ff"/>
+    <polygon points="1680.56 756.42 1680.56 764.32 1620.75 764.32 1620.75 730.1 1620.75 728.82 1680.56 728.82 1680.56 743.52 1680.56 756.42" fill="#b8d8ff"/>
+    <path d="M1680.56,685.02v13.5h-59.81v-43.69c0-1.76-1.28-3.2-3.04-3.2h62.85v33.39Z" fill="#c4c4c4"/>
+    <path d="M1669.46,1089.42v22h-81.47c-1.76,0-3.2-1.43-3.2-3.19v-153.81h84.67v135Z" fill="#b8d8ff"/>
+    <polygon points="1669.46 935.82 1669.46 954.42 1584.79 954.42 1584.79 953.85 1584.79 927.8 1584.79 922.82 1669.46 922.82 1669.46 935.82" fill="#b8d8ff"/>
+    <polygon points="1660.16 584.82 1660.16 651.63 1617.71 651.63 1591.34 651.63 1560.82 651.63 1523.06 651.63 1523.06 584.82 1566.26 584.82 1585.46 584.82 1660.16 584.82" fill="#b8d8ff"/>
+    <polygon points="1592.96 501.57 1592.96 560.08 1577.66 560.08 1560.86 560.08 1553.51 560.08 1553.51 501.57 1592.96 501.57" fill="#b8d8ff"/>
+    <polygon points="1553.51 501.57 1553.51 560.08 1546.16 560.08 1529.36 560.08 1493.96 560.08 1493.96 501.57 1553.51 501.57" fill="#b8d8ff"/>
+    <rect x="1414.27" y="584.82" width="108.79" height="66.81" fill="#c4c4c4"/>
+    <polygon points="1465.15 496.32 1465.15 560.08 1453.15 560.08 1437.85 560.08 1437.85 501.73 1417.46 501.73 1417.46 498.53 1417.46 475.52 1417.46 459.06 1417.53 455.86 1465.15 455.86 1465.15 478.62 1465.15 496.32" fill="#c4c4c4"/>
+    <polygon points="1465.15 444.72 1465.15 455.86 1417.53 455.86 1419.03 388.02 1465.15 388.02 1465.15 425.82 1465.15 444.72" fill="#c4c4c4"/>
+    <path d="M1465.15,371.52v16.5h-46.12l.83-37.64v-27.17c0-1.75-1.44-3.19-3.2-3.19l18.01.15,30.48.25v51.1Z" fill="#c4c4c4"/>
+    <path d="M1465.15,127.02v32.06h-253.05V4.7c0-1.76,1.44-3.2,3.2-3.2h249.85v125.52Z" fill="#ffd9d9"/>
+    <path d="M1434.86,239.52v57.6l-.19,23.05-18.01-.15h-201.36c-1.76,0-3.2-1.44-3.2-3.2v-157.74h222.76v80.44Z" fill="#ffd9d9"/>
+    <path d="M1419.03,388.02l-1.5,67.84h-51.67v-102.28h50.8c1.76,0,3.2-1.44,3.2-3.2l-.83,37.64Z" fill="#c4c4c4"/>
+    <polygon points="1417.46 501.73 1417.46 560.08 1399.56 560.08 1357.46 560.08 1357.46 501.73 1407.08 501.73 1414.27 501.73 1417.46 501.73" fill="#b8d8ff"/>
+    <polygon points="1414.27 584.82 1414.27 651.63 1409.79 651.63 1379.59 651.63 1320.56 651.63 1320.56 584.82 1385.36 584.82 1401.26 584.82 1414.27 584.82" fill="#b8d8ff"/>
+    <polygon points="1365.86 404.72 1365.86 455.86 1343.96 455.86 1343.96 435.12 1343.96 419.22 1343.96 404.72 1365.86 404.72" fill="#b8d8ff"/>
+    <polygon points="1357.46 501.73 1357.46 560.08 1346.65 560.08 1328.35 560.08 1320.56 560.08 1320.56 501.73 1322.85 501.73 1348.58 501.73 1357.46 501.73" fill="#b8d8ff"/>
+    <polygon points="1320.56 584.82 1320.56 651.63 1294.88 651.63 1289.66 651.63 1289.66 584.82 1307.8 584.82 1320.56 584.82" fill="#b8d8ff"/>
+    <polygon points="1320.56 501.73 1320.56 560.08 1287.25 560.08 1269.25 560.08 1260.4 560.08 1260.4 501.73 1267.88 501.73 1320.56 501.73" fill="#b8d8ff"/>
+    <polygon points="1318.76 435.12 1318.76 455.86 1316.78 455.86 1297.76 455.86 1297.76 404.72 1318.76 404.72 1318.76 419.22 1318.76 435.12" fill="#b8d8ff"/>
+    <polygon points="1289.66 584.82 1289.66 651.63 1258.46 651.63 1258.46 584.82 1265.36 584.82 1279.16 584.82 1289.66 584.82" fill="#fffdbb"/>
+    <polygon points="1260.4 501.73 1260.4 560.08 1251.55 560.08 1232.95 560.08 1195.16 560.08 1195.16 501.73 1229.36 501.73 1260.4 501.73" fill="#b8d8ff"/>
+    <polygon points="1258.46 584.82 1258.46 651.63 1237.51 651.63 1232.95 651.63 1232.95 584.82 1251.55 584.82 1258.46 584.82" fill="#b8d8ff"/>
+    <polygon points="1232.95 584.82 1232.95 651.63 1198.91 651.63 1198.91 584.82 1208.96 584.82 1222.16 584.82 1232.95 584.82" fill="#b8d8ff"/>
+    <path d="M1207.76,353.58v54.32h-38.01v-51.13c0-1.75,1.44-3.19,3.2-3.19h34.81Z" fill="#b8d8ff"/>
+    <polygon points="1198.91 584.82 1198.91 651.63 1142.42 651.63 1136.96 651.63 1136.96 584.82 1172.96 584.82 1188.86 584.82 1198.91 584.82" fill="#b8d8ff"/>
+    <polygon points="1195.16 501.73 1195.16 560.08 1162.46 560.08 1144.45 560.08 1136.96 560.08 1136.96 501.73 1144.82 501.73 1195.16 501.73" fill="#b8d8ff"/>
+    <polygon points="1136.96 584.82 1136.96 651.63 1109.82 651.63 1106.35 651.63 1106.35 584.82 1127.66 584.82 1136.96 584.82" fill="#ffd9d9"/>
+    <polygon points="1136.96 501.73 1136.96 560.08 1130.95 560.08 1114.15 560.08 1106.35 560.08 1106.35 501.73 1111.42 501.73 1136.96 501.73" fill="#ffd9d9"/>
+    <polygon points="1106.35 584.82 1106.35 651.63 1066.51 651.63 1047.55 651.63 1047.55 584.82 1063.46 584.82 1106.35 584.82" fill="#b8d8ff"/>
+    <polygon points="1106.35 501.73 1106.35 560.08 1098.55 560.08 1079.65 560.08 1079.65 501.73 1106.35 501.73" fill="#b8d8ff"/>
+    <polygon points="1079.65 501.73 1079.65 560.08 1066.15 560.08 1047.55 560.08 989.06 560.08 989.06 501.73 993.79 501.73 1079.65 501.73" fill="#b8d8ff"/>
+    <polygon points="1047.55 584.82 1047.55 651.63 989.16 651.63 952.76 651.63 952.76 584.82 1012.45 584.82 1031.36 584.82 1047.55 584.82" fill="#b8d8ff"/>
+    <polygon points="989.06 501.73 989.06 560.08 977.35 560.08 957.25 560.08 957.25 501.73 961.67 501.73 989.06 501.73" fill="#ffd9d9"/>
+    <polygon points="957.25 501.73 957.25 560.08 944.35 560.08 926.95 560.08 926.95 501.73 957.25 501.73" fill="#ffd9d9"/>
+    <polygon points="952.76 584.82 952.76 651.63 922.76 651.63 922.76 584.82 944.35 584.82 952.76 584.82" fill="#b8d8ff"/>
+    <polygon points="926.95 501.73 926.95 560.08 827.05 560.08 808.15 560.08 808.15 501.73 839.73 501.73 866.9 501.73 926.95 501.73" fill="#b8d8ff"/>
+    <polygon points="922.76 584.82 922.76 651.63 901.74 651.63 890.66 651.63 890.66 584.82 909.86 584.82 922.76 584.82" fill="#fffdbb"/>
+    <polygon points="890.66 584.82 890.66 651.63 866.9 651.63 836.05 651.63 827.05 651.63 827.05 584.82 835.76 584.82 851.36 584.82 890.66 584.82" fill="#b8d8ff"/>
+    <polygon points="827.05 584.82 827.05 651.63 804.89 651.63 776.05 651.63 776.05 584.82 782.58 584.82 798.26 584.82 827.05 584.82" fill="#fffdbb"/>
+    <polygon points="808.15 501.73 808.15 560.08 789.1 560.08 776.05 560.08 776.05 501.73 777.08 501.73 808.15 501.73" fill="#c4c4c4"/>
+    <polygon points="776.05 584.82 776.05 651.63 750.23 651.63 750.23 584.82 758.96 584.82 770.96 584.82 776.05 584.82" fill="#ffd9d9"/>
+    <path d="M750.23,584.82v66.81h-24.77c-1.28,0-2.4-.79-2.87-1.91-.16-.48-.32-.8-.32-1.28v-63.62h27.96Z" fill="#ffd9d9"/>
+    <path d="M750.23,434.6v46.35h-35.23v-49.54h32.04c1.75,0,3.19,1.44,3.19,3.19Z" fill="#b8d8ff"/>
+    <path d="M722.27,505.58v55.28c0-1.76-1.44-3.2-3.2-3.2h-155.57v-52.08h158.77Z" fill="#b8d8ff"/>
+    <path d="M715.07,1015.05v55.62c0,1.76-1.43,3.2-3.19,3.2h-26.7v-63.47h29.89v4.65Z" fill="#ffd9d9"/>
+    <polygon points="715.07 907.66 715.07 978.6 695.08 978.6 687.28 978.6 687.28 907.66 715.07 907.66" fill="#ffd9d9"/>
+    <path d="M715.07,869.3v38.36h-69.04c1.76,0,3.2-1.44,3.2-3.2v-35.16c0-1.75,1.28-3.19,3.04-3.19h59.61c1.76,0,3.19,1.44,3.19,3.19Z" fill="#c4c4c4"/>
+    <polygon points="715 431.41 715 480.95 692.05 480.95 681.55 480.95 681.55 431.41 685.51 431.41 706.08 431.41 715 431.41" fill="#b8d8ff"/>
+    <polygon points="687.28 907.66 687.28 978.6 668.68 978.6 650.98 978.6 633.58 978.6 633.58 907.66 646.03 907.66 687.28 907.66" fill="#ffd9d9"/>
+    <polygon points="685.18 1010.4 685.18 1073.87 633.58 1073.87 633.58 1010.4 646.03 1010.4 663.88 1010.4 685.18 1010.4" fill="#ffd9d9"/>
+    <polygon points="684.71 753.98 684.71 799.28 622.45 799.28 622.45 783.97 622.45 772.57 622.45 753.98 684.71 753.98" fill="#b8d8ff"/>
+    <polygon points="684.71 726.38 684.71 753.98 622.45 753.98 622.45 743.85 622.45 726.38 684.71 726.38" fill="#c4c4c4"/>
+    <path d="M684.71,665.54v60.84h-62.26v-64.04h59.06c1.76,0,3.2,1.44,3.2,3.2Z" fill="#fffdbb"/>
+    <polygon points="681.55 431.41 681.55 480.95 664.45 480.95 628.16 480.95 628.16 431.41 673.68 431.41 681.55 431.41" fill="#fffdbb"/>
+    <polygon points="633.58 1010.4 633.58 1073.87 631.33 1073.87 581.15 1073.87 577.48 1073.87 577.48 1010.4 588.88 1010.4 606.88 1010.4 633.58 1010.4" fill="#ffd9d9"/>
+    <polygon points="633.58 907.66 633.58 978.6 577.48 978.6 560.08 978.6 552.58 978.6 552.58 907.66 630.21 907.66 633.58 907.66" fill="#ffd9d9"/>
+    <polygon points="628.16 431.41 628.16 480.95 623.05 480.95 604.48 480.95 570.25 480.95 570.25 431.41 576.19 431.41 599.28 431.41 628.16 431.41" fill="#b8d8ff"/>
+    <path d="M604.48,703.58v40.27c0-1.76-1.44-3.2-3.19-3.2h-115.01v-56.95h118.2v19.88Z" fill="#b8d8ff"/>
+    <polygon points="577.48 1010.4 577.48 1073.87 497.09 1073.87 497.09 1049.4 497.09 1031.4 497.09 1010.4 503.98 1010.4 524.08 1010.4 577.48 1010.4" fill="#fffdbb"/>
+    <polygon points="570.25 431.41 570.25 480.95 561.55 480.95 542.95 480.95 510.36 480.95 510.36 431.41 514.35 431.41 516.18 431.41 565.38 431.41 570.25 431.41" fill="#b8d8ff"/>
+    <polygon points="563.5 556.54 563.5 557.66 517.38 557.66 516.18 557.66 507.26 557.66 507.26 505.58 535.76 505.58 556.76 505.58 563.5 505.58 563.5 556.54" fill="#ffd9d9"/>
+    <polygon points="552.58 907.66 552.58 978.6 524.08 978.6 503.98 978.6 496.29 978.6 496.29 907.66 552.58 907.66" fill="#ffd9d9"/>
+    <polygon points="510.36 431.41 510.36 480.95 499.45 480.95 479.35 480.95 449.96 480.95 449.96 431.41 453.78 431.41 482.28 431.41 510.36 431.41" fill="#b8d8ff"/>
+    <polygon points="507.26 505.58 507.26 557.66 473.06 557.66 473.06 505.58 481.16 505.58 499.45 505.58 507.26 505.58" fill="#b8d8ff"/>
+    <polygon points="497.09 1049.4 497.09 1073.87 437.79 1073.87 434.38 1073.87 434.38 1010.4 497.09 1010.4 497.09 1031.4 497.09 1049.4" fill="#ffd9d9"/>
+    <polygon points="496.29 907.66 496.29 978.6 484.18 978.6 465.88 978.6 465.88 907.66 496.29 907.66" fill="#ffd9d9"/>
+    <polygon points="486.28 683.7 486.28 740.65 439.71 740.65 436.68 740.65 436.68 697.05 465.88 697.05 465.88 683.7 486.28 683.7" fill="#c4c4c4"/>
+    <path d="M473.06,505.58v52.08h-81.61c-1.76,0-3.2,1.44-3.2,3.2v-55.28h84.81Z" fill="#b8d8ff"/>
+    <path d="M465.88,907.66v70.94h-29.2v-74.14c0,1.76,1.27,3.2,3.03,3.2h26.17Z" fill="#ffd9d9"/>
+    <polygon points="449.96 431.41 449.96 480.95 443.05 480.95 430.75 480.95 422.95 480.95 422.95 431.41 424.37 431.41 449.96 431.41" fill="#c4c4c4"/>
+    <path d="M436.68,740.65h3.03c-1.76,0-3.03,1.44-3.03,3.2v120.82h-64.1v-124.02h64.1Z" fill="#b8d8ff"/>
+    <path d="M439.39,662.34h-66.81v-49.06h16.76c.56.5,1.3.8,2.11.8h41.55c1.76,0,3.2,1.44,3.2,3.19v41.88c0,1.75,1.43,3.19,3.19,3.19Z" fill="#b8d8ff"/>
+    <polygon points="436.68 904.46 436.68 978.6 425.38 978.6 408.28 978.6 383.38 978.6 383.38 904.46 436.68 904.46" fill="#ffd9d9"/>
+    <polygon points="436.68 864.67 436.68 904.46 383.38 904.46 372.58 904.46 372.58 864.67 436.68 864.67" fill="#c4c4c4"/>
+    <polygon points="436.68 697.05 436.68 740.65 372.58 740.65 372.58 724.2 372.58 710.4 372.58 683.7 425.38 683.7 425.38 697.05 436.68 697.05" fill="#b8d8ff"/>
+    <polygon points="434.38 1010.4 434.38 1073.87 378.98 1073.87 372.58 1073.87 372.58 1010.4 380.08 1010.4 395.83 1010.4 434.38 1010.4" fill="#ffd9d9"/>
+    <polygon points="387.55 431.41 387.55 480.95 383.05 480.95 365.65 480.95 328.35 480.95 328.35 431.41 328.98 431.41 331.2 431.41 387.55 431.41" fill="#fffdbb"/>
+    <polygon points="337.18 897.18 337.18 904.46 287.09 904.46 287.09 903.02 287.09 864.67 337.18 864.67 337.18 881.58 337.18 897.18" fill="#fffdbb"/>
+    <polygon points="337.18 786.98 337.18 864.67 287.09 864.67 287.09 814.01 287.09 754.88 287.09 705.01 287.09 680.98 337.18 680.98 337.18 769.78 337.18 786.98" fill="#b8d8ff"/>
+    <path d="M337.18,654.38v26.6h-50.09v-64.51c0-1.75,1.44-3.19,3.19-3.19h46.9v41.1Z" fill="#b8d8ff"/>
+    <polygon points="334.48 1010.4 334.48 1073.87 277.82 1073.87 277.82 1010.4 287.09 1010.4 302.38 1010.4 334.48 1010.4" fill="#b8d8ff"/>
+    <polygon points="328.35 431.41 328.35 480.95 319.53 480.95 302.05 480.95 265.86 480.95 265.86 431.41 328.35 431.41" fill="#b8d8ff"/>
+    <path d="M322.73,505.58v54.16c0-1.76-1.44-3.2-3.2-3.2h-66.38v-50.96h69.58Z" fill="#b8d8ff"/>
+    <path d="M287.09,904.46v74.14h-71.41l.08-72.38h68.29c1.76,0,3.04-1.44,3.04-3.2v1.44Z" fill="#ffd9d9"/>
+    <polygon points="277.82 1010.4 277.82 1073.87 218.85 1073.87 212.45 1073.87 212.45 1010.4 218.23 1010.4 235.48 1010.4 277.82 1010.4" fill="#b8d8ff"/>
+    <polygon points="265.86 431.41 265.86 480.95 257.05 480.95 237.25 480.95 207.46 480.95 207.46 431.41 209.9 431.41 212.28 431.41 265.86 431.41" fill="#b8d8ff"/>
+    <polygon points="253.15 556.46 253.15 556.54 212.28 556.54 211.65 556.54 211.65 505.58 225.85 505.58 253.15 505.58 253.15 556.46" fill="#b8d8ff"/>
+    <polygon points="215.76 906.22 215.68 978.6 206.68 978.6 186.28 978.6 134.38 978.6 134.46 906.13 215.76 906.22" fill="#b8d8ff"/>
+    <polygon points="212.45 1010.4 212.45 1073.87 170.38 1073.87 170.38 1010.4 186.28 1010.4 206.68 1010.4 212.45 1010.4" fill="#ffd9d9"/>
+    <path d="M207.46,431.41v49.54h-32.56v-46.35c0-1.75,1.44-3.19,3.19-3.19h29.37Z" fill="#b8d8ff"/>
+    <polygon points="170.38 1010.4 170.38 1073.87 137.98 1073.87 137.98 1010.4 146.68 1010.4 164.38 1010.4 170.38 1010.4" fill="#ffd9d9"/>
+    <path d="M154.6,817.04v43.95c0,1.76-1.44,3.2-3.2,3.2h-80.06c-1.76,0-3.04,1.44-3.04,3.2v35.47c0,1.76,1.28,3.2,3.04,3.2H1.5v-89.02c0-1.75,1.44-3.19,3.19-3.19h146.71c1.76,0,3.2,1.44,3.2,3.19Z" fill="#c4c4c4"/>
+    <polygon points="137.98 1010.4 137.98 1073.87 135.42 1073.87 79.78 1073.87 79.78 1010.4 87.28 1010.4 103.48 1010.4 137.98 1010.4" fill="#ffd9d9"/>
+    <polygon points="134.46 906.13 134.38 978.6 118.48 978.6 99.88 978.6 76.48 978.6 76.56 906.07 134.46 906.13" fill="#ffd9d9"/>
+    <path d="M79.78,1010.4v63.47H4.69c-1.75,0-3.19-1.44-3.19-3.2v-60.27h78.28Z" fill="#ffd9d9"/>
+    <polygon points="76.56 906.07 76.48 978.6 42.58 978.6 29.08 978.6 21.88 978.6 21.88 906.06 71.34 906.06 76.56 906.07" fill="#b8d8ff"/>
+    <polygon points="21.88 906.06 21.88 978.6 15.28 978.6 1.5 978.6 1.5 906.06 21.88 906.06" fill="#c4c4c4"/>
+  </g>
+  <g>
+    <path d="M253.15,556.54h66.38c1.76,0,3.2,1.44,3.2,3.2v50.34c0,1.76-1.44,3.2-3.2,3.2h-29.25c-1.75,0-3.19,1.44-3.19,3.19v286.55c0,1.76-1.28,3.2-3.04,3.2h-68.29l-81.3-.09-57.9-.06h-5.22c-1.76-.01-3.04-1.45-3.04-3.21v-35.47c0-1.76,1.28-3.2,3.04-3.2h80.06c1.76,0,3.2-1.44,3.2-3.2v-43.95c0-1.75-1.44-3.19-3.2-3.19H4.69c-1.75,0-3.19,1.44-3.19,3.19v253.63c0,1.76,1.44,3.2,3.19,3.2h707.19c1.76,0,3.19-1.44,3.19-3.2v-201.37c0-1.75-1.43-3.19-3.19-3.19h-59.61c-1.76,0-3.04,1.44-3.04,3.19v35.16c0,1.76-1.44,3.2-3.2,3.2h-206.32c-1.76,0-3.03-1.44-3.03-3.2v-160.61c0-1.76,1.27-3.2,3.03-3.2h161.58c1.75,0,3.19,1.44,3.19,3.2v80.39c0,1.75,1.28,3.19,3.04,3.19h73.99c1.76,0,3.2-1.44,3.2-3.19v-158.7c0-1.76-1.44-3.2-3.2-3.2h-242.12c-1.76,0-3.19-1.44-3.19-3.19v-41.88c0-1.75-1.44-3.19-3.2-3.19h-41.55c-.81,0-1.55-.3-2.11-.8-.67-.59-1.09-1.45-1.09-2.4v-50.02c0-1.76,1.44-3.2,3.2-3.2h327.62c1.76,0,3.2,1.44,3.2,3.2v87.58c0,.48.16.8.32,1.28.47,1.12,1.59,1.91,2.87,1.91h892.25c1.76,0,3.04,1.44,3.04,3.2v224.54c0,1.76-1.28,3.2-3.04,3.2h-29.72c-1.76,0-3.2,1.44-3.2,3.19v222.47c0,1.76,1.44,3.19,3.2,3.19h202.64c1.76,0,3.2-1.43,3.2-3.19v-220.07c0-1.76-1.44-3.19-3.2-3.19h-65.2c-1.76,0-3.2-1.44-3.2-3.2v-380.2c0-.64-.16-1.28-.48-1.76l-166.53-255.39h-17.58V4.7c0-1.76-1.27-3.2-3.03-3.2h-319.31c-1.76,0-3.2,1.44-3.2,3.2v312.12c0,1.76,1.44,3.2,3.2,3.2h201.36c1.76,0,3.2,1.44,3.2,3.19v27.17c0,1.76-1.44,3.2-3.2,3.2h-243.71c-1.76,0-3.2,1.44-3.2,3.19v95.89c0,1.76,1.44,3.2,3.2,3.2h241.32c1.76,0,3.19,1.44,3.19,3.2v39.47c0,1.76-1.43,3.2-3.19,3.2h-660.84c-1.76,0-3.2-1.44-3.2-3.2v-63.93c0-1.75-1.44-3.19-3.19-3.19H178.09c-1.75,0-3.19,1.44-3.19,3.19v118.75c0,1.76,1.44,3.19,3.19,3.19h75.06Z" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="71.34 906.06 21.88 906.06 1.5 906.06" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="646.03 907.66 687.28 907.66 715.07 907.66" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="21.88" y1="906.06" x2="21.88" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="15.28 978.6 21.88 978.6 29.08 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="42.58 978.6 76.48 978.6 99.88 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="118.48 978.6 134.38 978.6 186.28 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="206.68 978.6 215.68 978.6 229.78 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="247.78 978.6 287.09 978.6 319.48 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="76.48" y1="978.6" x2="76.56" y2="906.07" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="134.38" y1="978.6" x2="134.46" y2="906.13" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="215.68" y1="978.6" x2="215.76" y2="906.22" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="287.09 903.02 287.09 904.46 287.09 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="425.38 978.6 436.68 978.6 448.18 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="484.18 978.6 496.29 978.6 503.98 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="524.08 978.6 552.58 978.6 560.08 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="577.48 978.6 633.58 978.6 650.98 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="668.68 978.6 687.28 978.6 695.08 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="15.28 1010.4 79.78 1010.4 87.28 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="103.48 1010.4 137.98 1010.4 146.68 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="164.38 1010.4 170.38 1010.4 186.28 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="206.68 1010.4 212.45 1010.4 218.23 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="235.48 1010.4 277.82 1010.4 287.09 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="302.38 1010.4 334.48 1010.4 334.48 1073.87" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="395.83 1010.4 434.38 1010.4 497.09 1010.4 503.98 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="524.08 1010.4 577.48 1010.4 588.88 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="606.88 1010.4 633.58 1010.4 646.03 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="663.88 1010.4 685.18 1010.4 695.08 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="685.18" y1="1073.87" x2="685.18" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="633.58" y1="1073.87" x2="633.58" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="577.48" y1="1073.87" x2="577.48" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="497.09" y1="1073.87" x2="497.09" y2="1049.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="497.09" y1="1031.4" x2="497.09" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="434.38" y1="1073.87" x2="434.38" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="372.58 1073.87 372.58 1010.4 380.08 1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="277.82" y1="1073.87" x2="277.82" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="212.45" y1="1073.87" x2="212.45" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="170.38" y1="1073.87" x2="170.38" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="137.98" y1="1073.87" x2="137.98" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="79.78" y1="1073.87" x2="79.78" y2="1010.4" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="687.28" y1="907.66" x2="687.28" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="633.58" y1="907.66" x2="633.58" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="552.58" y1="907.66" x2="552.58" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="496.29" y1="907.66" x2="496.29" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="465.88" y1="907.66" x2="465.88" y2="978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="436.68 978.6 436.68 904.46 383.38 904.46 372.58 904.46 372.58 864.67 372.58 853.5" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="383.38 904.46 383.38 978.6 408.28 978.6" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="436.68" y1="864.67" x2="372.58" y2="864.67" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="372.58 837.3 372.58 740.65 436.68 740.65 439.71 740.65" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="372.58" y1="724.2" x2="372.58" y2="740.65" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="372.58 710.4 372.58 683.7 425.38 683.7 425.38 697.05 436.68 697.05 465.88 697.05 465.88 683.7 486.28 683.7 496.29 683.7" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="486.28" y1="740.65" x2="486.28" y2="683.7" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="436.68" y1="740.65" x2="436.68" y2="697.05" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="337.18 897.18 337.18 904.46 287.09 904.46" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="337.18 881.58 337.18 864.67 337.18 786.98" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="337.18 769.78 337.18 680.98 337.18 654.38" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="319.53 613.28 337.18 613.28 337.18 637.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="337.18" y1="680.98" x2="287.09" y2="680.98" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="337.18" y1="864.67" x2="287.09" y2="864.67" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="511.45" y1="683.7" x2="570.25" y2="683.7" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="604.48 743.85 604.48 703.58 604.48 683.7 588.55 683.7" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="622.45" y1="662.34" x2="622.45" y2="686.18" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="622.45 703.58 622.45 726.38 622.45 743.85 622.45 753.98 622.45 772.57" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="622.45 783.97 622.45 799.28 684.71 799.28" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="684.71" y1="753.98" x2="622.45" y2="753.98" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="684.71" y1="726.38" x2="622.45" y2="726.38" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="439.39 662.34 372.58 662.34 372.58 648.68" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="372.58 633.38 372.58 613.28 389.34 613.28" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="322.73 559.74 322.73 505.58 286.05 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="269.65 505.58 253.15 505.58 225.85 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="211.65" y1="505.58" x2="211.65" y2="556.54" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="253.15" y1="556.46" x2="253.15" y2="505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="174.9" y1="480.95" x2="183.55" y2="480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="198.25 480.95 207.46 480.95 237.25 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="257.05 480.95 265.86 480.95 302.05 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="319.53 480.95 328.35 480.95 365.65 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="383.05 480.95 387.55 480.95 392.05 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="430.75 480.95 422.95 480.95 422.95 431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="443.05 480.95 449.96 480.95 479.35 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="499.45 480.95 510.36 480.95 542.95 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="561.55 480.95 570.25 480.95 604.48 480.95 623.05 480.95 628.16 480.95 664.45 480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="692.05 480.95 681.55 480.95 681.55 431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="722.5 480.95 715 480.95 715 431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="740.95" y1="480.95" x2="750.23" y2="480.95" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="750.23" y1="498.53" x2="750.23" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="776.05 501.73 776.05 560.08 789.1 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="808.15" y1="501.73" x2="808.15" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="827.05 560.08 926.95 560.08 926.95 501.73" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="977.35 560.08 989.06 560.08 1047.55 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1098.55 560.08 1106.35 560.08 1114.15 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1130.95 560.08 1136.96 560.08 1144.45 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1251.55 560.08 1260.4 560.08 1269.25 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1287.25 560.08 1320.56 560.08 1328.35 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1346.65 560.08 1357.46 560.08 1399.56 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1417.46 498.53 1417.46 501.73 1417.46 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1437.85 560.08 1437.85 501.73 1417.46 501.73 1414.27 501.73" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1453.15 560.08 1465.15 560.08 1465.15 496.32" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1465.15 478.62 1465.15 455.86 1417.53 455.86 1414.27 455.86" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1465.15" y1="444.72" x2="1465.15" y2="455.86" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="388.25 560.86 388.25 505.58 421.16 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="439.39 505.58 473.06 505.58 481.16 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="499.45 505.58 507.26 505.58 535.76 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="556.76 505.58 563.5 505.58 570.25 505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="586.16" y1="505.58" x2="684.71" y2="505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="703.46 505.58 722.27 505.58 722.27 560.86" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="563.5" y1="556.54" x2="563.5" y2="505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="507.26" y1="557.66" x2="507.26" y2="505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="473.06" y1="557.66" x2="473.06" y2="505.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="750.23" y1="651.63" x2="750.23" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="740.95 584.82 750.23 584.82 758.96 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="776.05 651.63 776.05 584.82 770.96 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="776.05" y1="584.82" x2="782.58" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="827.05 651.63 827.05 584.82 798.26 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="827.05" y1="584.82" x2="835.76" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="944.35 584.82 952.76 584.82 1012.45 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1127.66 584.82 1136.96 584.82 1172.96 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1188.86 584.82 1198.91 584.82 1208.96 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1251.55 584.82 1258.46 584.82 1265.36 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1307.8 584.82 1320.56 584.82 1385.36 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1401.26 584.82 1414.27 584.82 1523.06 584.82 1566.26 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1585.46 584.82 1660.16 584.82 1660.16 651.63" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1617.71 651.63 1660.16 651.63 1680.56 651.63 1680.56 685.02" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1620.75" y1="698.52" x2="1680.56" y2="698.52" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1680.56 743.52 1680.56 728.82 1620.75 728.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1680.56 756.42 1680.56 764.32 1680.56 796.92" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1680.56 815.22 1680.56 822.22 1680.56 839.22" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1617.71 882.57 1680.56 882.57 1680.56 857.52" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1669.46 917.22 1669.46 922.82 1669.46 935.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1669.46 960.72 1669.46 954.42 1584.79 954.42" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1669.46" y1="978.12" x2="1669.46" y2="1089.42" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="890.66 651.63 890.66 584.82 851.36 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="922.76 651.63 922.76 584.82 909.86 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="952.76" y1="651.63" x2="952.76" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="957.25 501.73 957.25 560.08 944.35 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="989.06" y1="501.73" x2="989.06" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1079.65 501.73 1079.65 560.08 1066.15 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1106.35" y1="501.73" x2="1106.35" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1136.96" y1="501.73" x2="1136.96" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1047.55 651.63 1047.55 584.82 1031.36 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1106.35 651.63 1106.35 584.82 1063.46 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1136.96" y1="651.63" x2="1136.96" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1198.91" y1="651.63" x2="1198.91" y2="584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1162.46 560.08 1195.16 560.08 1232.95 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1195.16" y1="501.73" x2="1195.16" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1260.4" y1="501.73" x2="1260.4" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1320.56" y1="501.73" x2="1320.56" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1357.46" y1="501.73" x2="1357.46" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1232.95 651.63 1232.95 584.82 1222.16 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1258.46" y1="584.82" x2="1258.46" y2="651.63" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1289.66 651.63 1289.66 584.82 1279.16 584.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1320.56" y1="584.82" x2="1320.56" y2="651.63" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1414.27" y1="584.82" x2="1414.27" y2="651.63" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1523.06" y1="584.82" x2="1523.06" y2="651.63" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1537.64 244.42 1537.64 318.72 1493.96 318.72 1493.96 501.57 1493.96 560.08 1529.36 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1546.16 560.08 1553.51 560.08 1560.86 560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1577.66 560.08 1592.96 560.08 1592.96 501.57" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1612.76" y1="560.08" x2="1685.66" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1703.66" y1="560.08" x2="1722.23" y2="560.08" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1722.23 501.57 1592.96 501.57 1553.51 501.57 1493.96 501.57" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1553.51" y1="560.08" x2="1553.51" y2="501.57" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1419.86 350.38 1419.03 388.02 1417.53 455.86 1417.46 459.06" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1416.66 320.02 1434.67 320.17 1465.15 320.42 1465.15 371.52" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1418.66 388.02 1419.03 388.02 1465.15 388.02 1465.15 425.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1365.86 353.58 1365.86 404.72 1365.86 455.86" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1343.96" y1="455.86" x2="1343.96" y2="435.12" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1318.76" y1="455.86" x2="1318.76" y2="435.12" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1318.76 419.22 1318.76 404.72 1297.76 404.72" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1297.76 353.58 1297.76 404.72 1297.76 455.86" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1365.86 404.72 1343.96 404.72 1343.96 419.22" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1169.75" y1="407.9" x2="1176.86" y2="407.9" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1190.06 407.9 1207.76 407.9 1207.76 353.58" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1212.1 159.08 1434.86 159.08 1465.15 159.08 1465.15 127.02" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1465.15 189.72 1465.15 239.52 1465.15 283.02" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1434.86 159.08 1434.86 239.52 1434.86 297.12" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1465.15" y1="239.52" x2="1434.86" y2="239.52" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1465.15" y1="111.07" x2="1465.15" y2="1.5" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1584.79" y1="922.82" x2="1669.46" y2="922.82" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1722.23" y1="881.77" x2="1722.23" y2="990.67" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1722.23" y1="1014.52" x2="1793.83" y2="1014.52" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1722.23" y1="1035.82" x2="1722.23" y2="1111.42" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1620.75" y1="822.22" x2="1680.56" y2="822.22" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="1620.75" y1="764.32" x2="1680.56" y2="764.32" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="207.46" y1="480.95" x2="207.46" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="265.86" y1="480.95" x2="265.86" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="328.35" y1="480.95" x2="328.35" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="387.55" y1="480.95" x2="387.55" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="449.96" y1="480.95" x2="449.96" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="510.36" y1="480.95" x2="510.36" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="570.25" y1="480.95" x2="570.25" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <line x1="628.16" y1="480.95" x2="628.16" y2="431.41" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+    <polyline points="1722.23 1010.47 1722.23 1014.52 1722.23 1018.57" fill="none" stroke="#323232" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,178 @@
+{
+  "floor": 5,
+  "imageWidth": 1797,
+  "imageHeight": 1114,
+  "metersPerPixel": 0.1803,
+  "nodes": [
+    {
+      "id": "n_1",
+      "x": 1627,
+      "y": 962,
+      "label": "407",
+      "type": "room"
+    },
+    {
+      "id": "n_2",
+      "x": 1626,
+      "y": 1057,
+      "label": "410",
+      "type": "room"
+    },
+    {
+      "id": "n_3",
+      "x": 1698,
+      "y": 1083,
+      "label": "7a",
+      "type": "room"
+    },
+    {
+      "id": "n_4",
+      "x": 1763,
+      "y": 1076,
+      "label": "405",
+      "type": "room"
+    },
+    {
+      "id": "n_5",
+      "x": 1762,
+      "y": 1006,
+      "label": "408",
+      "type": "room"
+    },
+    {
+      "id": "n_6",
+      "x": 1763,
+      "y": 936,
+      "label": "406",
+      "type": "room"
+    },
+    {
+      "id": "n_7",
+      "x": 1734,
+      "y": 1038,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_8",
+      "x": 1700,
+      "y": 1037,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_9",
+      "x": 1701,
+      "y": 1003,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_10",
+      "x": 1656,
+      "y": 1003,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_11",
+      "x": 1699,
+      "y": 949,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_12",
+      "x": 1663,
+      "y": 945,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_13",
+      "x": 1698,
+      "y": 906,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_14",
+      "x": 1738,
+      "y": 906,
+      "label": "",
+      "type": "corridor"
+    },
+    {
+      "id": "n_15",
+      "x": 1630,
+      "y": 905,
+      "label": "Лестница G",
+      "type": "stairs",
+      "stairsGroupId": "G",
+      "connectsFloors": [
+        1,
+        2,
+        4,
+        5
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "n_3",
+      "to": "n_8"
+    },
+    {
+      "from": "n_8",
+      "to": "n_7"
+    },
+    {
+      "from": "n_7",
+      "to": "n_4"
+    },
+    {
+      "from": "n_8",
+      "to": "n_9"
+    },
+    {
+      "from": "n_9",
+      "to": "n_10"
+    },
+    {
+      "from": "n_10",
+      "to": "n_2"
+    },
+    {
+      "from": "n_9",
+      "to": "n_5"
+    },
+    {
+      "from": "n_9",
+      "to": "n_11"
+    },
+    {
+      "from": "n_11",
+      "to": "n_12"
+    },
+    {
+      "from": "n_12",
+      "to": "n_1"
+    },
+    {
+      "from": "n_11",
+      "to": "n_13"
+    },
+    {
+      "from": "n_13",
+      "to": "n_14"
+    },
+    {
+      "from": "n_14",
+      "to": "n_6"
+    },
+    {
+      "from": "n_13",
+      "to": "n_15"
+    }
+  ]
+}
