@@ -51,6 +51,10 @@ class RatingParser {
   }
 
   /// Парсит страницу ведомости: шапку + таблицу оценок.
+  ///
+  /// На сайте встречаются две разные таблицы:
+  /// - рейтинговая, с контрольными точками («Точка 1», «Вес Точки,%», Лек/Пр/Лаб/Др);
+  /// - простая, для экзаменов и пересдач (ФИО, дата сдачи, оценка, подпись).
   static Vedomost parseVedomost(String html, String subjectId) {
     final doc = html_parser.parse(html);
 
@@ -62,11 +66,15 @@ class RatingParser {
     final year = _textById(doc, 'ucVedBox_lblYear');
     final subjectName = _textById(doc, 'ucVedBox_lblDis');
 
-    // ── Точки КТ
-    final controlPoints = _parseControlPoints(doc);
+    final table = doc.querySelector('table[id\$="ucVedBox_tblVed"]');
+    final sheet = table == null ? null : _TableGrid.fromTable(table);
 
-    // ── Строки студентов
-    final students = _parseStudents(doc, controlPoints.length);
+    final controlPoints = sheet == null
+        ? const <ControlPoint>[]
+        : _parseControlPoints(sheet);
+    final students = sheet == null
+        ? const <StudentRow>[]
+        : _parseStudents(sheet, controlPoints);
 
     return Vedomost(
       subjectId: subjectId,
@@ -87,117 +95,143 @@ class RatingParser {
     return el?.text.trim() ?? '';
   }
 
-  /// Парсит шапку с КТ: names, dates, weights.
-  static List<ControlPoint> _parseControlPoints(dom.Document doc) {
-    final table = doc.querySelector('table[id\$="ucVedBox_tblVed"]');
-    if (table == null) return [];
+  // ─── Контрольные точки ───
 
-    final rows = table.querySelectorAll('tr');
-    if (rows.length < 4) return [];
+  static List<ControlPoint> _parseControlPoints(_TableGrid sheet) {
+    final pointRow = sheet.findRow(
+      (row) =>
+          row.any((text) => RegExp(r'^точка\s*\d+$').hasMatch(_norm(text))),
+    );
+    if (pointRow < 0) return const <ControlPoint>[];
 
-    // Строка 1: "Точка 1", date, "Итог по КТ 1", ...
-    final row1 = rows[0].querySelectorAll('td');
-    // Строка 2: "Вес Точки,%", "20%", ...
-    final row2 = rows[1].querySelectorAll('td');
-    // Строка 4: "100%", "0%", "0%", "0%", ...
-    final row4 = rows[3].querySelectorAll('td');
+    // Начала блоков: «Точка 1» занимает две колонки, поэтому берём первое
+    // вхождение текста, а повторы справа пропускаем.
+    final starts = <int>[];
+    final names = <String>[];
+    for (var col = 0; col < sheet.colCount; col++) {
+      final text = sheet.cell(pointRow, col);
+      if (!RegExp(r'^точка\s*\d+$').hasMatch(_norm(text))) continue;
+      if (col > 0 && sheet.cell(pointRow, col - 1) == text) continue;
+      starts.add(col);
+      names.add(text);
+    }
+    if (starts.isEmpty) return const <ControlPoint>[];
 
-    // Ищем "Точка N" в row1.
+    final weightLabelRow = sheet.findRow(
+      (row) => row.any((text) => _norm(text).startsWith('весточки')),
+    );
+    // Строка подзаголовков «Лек. / Пр. / Лаб. / Др.» — их минимум четыре.
+    final subHeaderRow = sheet.findRow((row) {
+      var count = 0;
+      for (final text in row) {
+        final key = _norm(text);
+        if (key.startsWith('лек') ||
+            key.startsWith('лаб') ||
+            key.startsWith('др') ||
+            key == 'пр' ||
+            key == 'пр.') {
+          count++;
+        }
+      }
+      return count >= 4;
+    });
+    // Веса — строка сразу под подзаголовками.
+    var weightsRow = subHeaderRow < 0 ? -1 : subHeaderRow + 1;
+    if (!_looksLikePercentRow(sheet, weightsRow)) {
+      weightsRow = -1;
+      for (
+        var r = (subHeaderRow < 0 ? 0 : subHeaderRow + 1);
+        r < sheet.rowCount;
+        r++
+      ) {
+        if (_looksLikePercentRow(sheet, r)) {
+          weightsRow = r;
+          break;
+        }
+      }
+    }
+
     final points = <ControlPoint>[];
-    for (int i = 0; i < row1.length; i++) {
-      final text = row1[i].text.trim();
-      if (RegExp(r'^Точка\s+\d+$').hasMatch(text)) {
-        // Следующая ячейка — дата
-        final date = i + 1 < row1.length ? row1[i + 1].text.trim() : '';
-
-        // Вес точки: в row2 ищем "NN%" рядом с "Вес Точки,%".
-        // row2 имеет структуру: "Вес Точки,%", "20%", "Вес Точки,%", "20%", ...
-        int weight = 0;
-        for (int j = 0; j < row2.length; j++) {
-          if (row2[j].text.trim().startsWith('Вес')) {
-            if (j + 1 < row2.length) {
-              final w = row2[j + 1].text.trim().replaceAll('%', '');
-              weight = int.tryParse(w) ?? 0;
-            }
-            break;
-          }
-        }
-
-        // Веса Лек/Пр/Лаб/Др: в row4 ищем 4 числа подряд, начиная
-        // с позиции соответствующей точке. Точки идут каждые 4 ячейки.
-        final pointIndex = points.length;
-        final startIdx = 4 + pointIndex * 4; // 4 ячейки до первой точки
-        final weights = <int>[];
-        for (int k = 0; k < 4; k++) {
-          if (startIdx + k < row4.length) {
-            final v = row4[startIdx + k].text.trim().replaceAll('%', '');
-            weights.add(int.tryParse(v) ?? 0);
-          } else {
-            weights.add(0);
-          }
-        }
-
-        points.add(
-          ControlPoint(
-            name: text,
-            date: date,
-            weightPercent: weight,
-            weights: weights,
-          ),
+    for (var i = 0; i < starts.length; i++) {
+      final start = starts[i];
+      final date = sheet.cell(pointRow, start + 2);
+      final percent = _parsePercent(
+        weightLabelRow < 0 ? '' : sheet.cell(weightLabelRow, start + 2),
+      );
+      final weights = <int>[];
+      for (var k = 0; k < 4; k++) {
+        weights.add(
+          weightsRow < 0 ? 0 : _parsePercent(sheet.cell(weightsRow, start + k)),
         );
       }
+      points.add(
+        ControlPoint(
+          name: names[i],
+          date: date,
+          weightPercent: percent,
+          weights: weights,
+        ),
+      );
     }
     return points;
   }
 
-  /// Парсит строки студентов.
-  static List<StudentRow> _parseStudents(dom.Document doc, int ktCount) {
-    final table = doc.querySelector('table[id\$="ucVedBox_tblVed"]');
-    if (table == null) return [];
+  static bool _looksLikePercentRow(_TableGrid sheet, int row) {
+    if (row < 0 || row >= sheet.rowCount) return false;
+    var percents = 0;
+    for (var col = 0; col < sheet.colCount; col++) {
+      // Именно «50%», а не «Вес Точки,%» из строки выше.
+      if (RegExp(r'^\d+\s*%$').hasMatch(sheet.cell(row, col).trim())) {
+        percents++;
+      }
+    }
+    return percents >= 4;
+  }
 
-    final result = <StudentRow>[];
-    for (final tr in table.querySelectorAll('tr')) {
-      final cls = tr.attributes['class'] ?? '';
-      if (cls != 'VedRow1' && cls != 'VedRow2') continue;
+  // ─── Строки студентов ───
 
-      final tds = tr.querySelectorAll('td');
-      if (tds.length < 3) continue;
+  static List<StudentRow> _parseStudents(
+    _TableGrid sheet,
+    List<ControlPoint> points,
+  ) {
+    final recordBookCol = _findColumn(
+      sheet,
+      'номерзачетнойкнижки',
+      fallback: 2,
+    );
+    final ratingCol = _findColumn(sheet, 'итоговыйрейтинг');
+    final gradeCol = _findColumn(sheet, 'оценкапорейтингу');
+    // В простой ведомости (экзамен/пересдача) оценка называется просто «Оценка».
+    final simpleGradeCol = _findColumn(sheet, 'оценка', exact: true);
+    final totalCol = _findColumn(sheet, 'итог', exact: true);
 
-      final number = int.tryParse(tds[0].text.trim()) ?? 0;
-      final recordBook = tds[2].text.trim();
+    final pointsStarts = _pointStarts(sheet);
+
+    final students = <StudentRow>[];
+    for (var row = 0; row < sheet.rowCount; row++) {
+      if (!sheet.isStudentRow(row)) continue;
+
+      final number = int.tryParse(_norm(sheet.cell(row, 0))) ?? 0;
+      final recordBook = sheet.cell(row, recordBookCol).trim();
       if (recordBook.isEmpty) continue;
 
-      // Индекс текущей ячейки в tds
-      int idx = 3;
-
-      // Оценки по точкам
       final scores = <String>[];
       final ktTotals = <String>[];
-      for (int kt = 0; kt < ktCount; kt++) {
-        for (int j = 0; j < 4; j++) {
-          scores.add(idx < tds.length ? tds[idx].text.trim() : '');
-          idx++;
+      for (final start in pointsStarts) {
+        for (var k = 0; k < 4; k++) {
+          scores.add(sheet.cell(row, start + k).trim());
         }
-        ktTotals.add(idx < tds.length ? tds[idx].text.trim() : '');
-        idx++;
+        ktTotals.add(sheet.cell(row, start + 4).trim());
       }
 
-      // После КТ: "Надбавка %", "Итоговый Рейтинг", "Оценка по рейтингу", ...
-      // idx указывает на "Надбавка %" — пропускаем её
-      String finalRating = '';
-      String grade = '';
-      if (idx < tds.length) {
-        idx++; // надбавка
-      }
-      if (idx < tds.length) {
-        finalRating = tds[idx].text.trim();
-        idx++;
-      }
-      if (idx < tds.length) {
-        grade = tds[idx].text.trim();
-      }
+      final finalRating = ratingCol < 0
+          ? (totalCol < 0 ? '' : sheet.cell(row, totalCol).trim())
+          : sheet.cell(row, ratingCol).trim();
+      final grade = gradeCol >= 0
+          ? sheet.cell(row, gradeCol).trim()
+          : (simpleGradeCol >= 0 ? sheet.cell(row, simpleGradeCol).trim() : '');
 
-      result.add(
+      students.add(
         StudentRow(
           number: number,
           recordBook: recordBook,
@@ -208,6 +242,139 @@ class RatingParser {
         ),
       );
     }
-    return result;
+    return students;
   }
+
+  static List<int> _pointStarts(_TableGrid sheet) {
+    final pointRow = sheet.findRow(
+      (row) =>
+          row.any((text) => RegExp(r'^точка\s*\d+$').hasMatch(_norm(text))),
+    );
+    if (pointRow < 0) return const <int>[];
+    final starts = <int>[];
+    for (var col = 0; col < sheet.colCount; col++) {
+      final text = sheet.cell(pointRow, col);
+      if (!RegExp(r'^точка\s*\d+$').hasMatch(_norm(text))) continue;
+      if (col > 0 && sheet.cell(pointRow, col - 1) == text) continue;
+      starts.add(col);
+    }
+    return starts;
+  }
+
+  /// Колонка по тексту заголовка (без учёта пробелов и регистра).
+  static int _findColumn(
+    _TableGrid sheet,
+    String header, {
+    bool exact = false,
+    int fallback = -1,
+  }) {
+    final target = _norm(header);
+    for (var row = 0; row < sheet.rowCount; row++) {
+      if (sheet.isStudentRow(row)) continue;
+      for (var col = 0; col < sheet.colCount; col++) {
+        final text = _norm(sheet.cell(row, col));
+        if (text.isEmpty) continue;
+        if (exact ? text == target : text.startsWith(target)) {
+          // Значение ищем в первой строке без объединения — это шапка.
+          return col;
+        }
+      }
+    }
+    return fallback;
+  }
+
+  static int _parsePercent(String text) =>
+      int.tryParse(text.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
+
+  static String _norm(String text) =>
+      text.toLowerCase().replaceAll(RegExp(r'[\s\u00A0\u2007\u202F]+'), '');
+}
+
+/// Таблица ведомости, разложенная в сетку «строка → колонка → текст».
+///
+/// Нужна потому, что шапка использует colspan/rowspan: без учёта объединений
+/// индексы ячеек в строке не совпадают с номерами колонок. Из-за этого
+/// веса контрольных точек съезжали на одну точку вперёд.
+class _TableGrid {
+  _TableGrid(this._grid, this._studentRows, this.colCount);
+
+  final List<List<String>> _grid;
+  final Set<int> _studentRows;
+  final int colCount;
+
+  int get rowCount => _grid.length;
+
+  String cell(int row, int col) {
+    if (row < 0 || row >= _grid.length) return '';
+    final line = _grid[row];
+    if (col < 0 || col >= line.length) return '';
+    return line[col];
+  }
+
+  bool isStudentRow(int row) => _studentRows.contains(row);
+
+  int findRow(bool Function(List<String> row) test) {
+    for (var row = 0; row < _grid.length; row++) {
+      if (test(_grid[row])) return row;
+    }
+    return -1;
+  }
+
+  static _TableGrid fromTable(dom.Element table) {
+    final rows = table.querySelectorAll('tr');
+    final cells = <int, Map<int, String>>{};
+    final studentRows = <int>{};
+    var maxCol = 0;
+
+    for (var r = 0; r < rows.length; r++) {
+      final tr = rows[r];
+      final rowClass = (tr.attributes['class'] ?? '').trim();
+      final isStudent = rowClass == 'VedRow1' || rowClass == 'VedRow2';
+      if (isStudent) studentRows.add(r);
+
+      final rowCells = cells.putIfAbsent(r, () => <int, String>{});
+      var col = 0;
+      for (final cell in tr.querySelectorAll('th, td')) {
+        while (rowCells.containsKey(col)) {
+          col++;
+        }
+        final colspan = int.tryParse(cell.attributes['colspan'] ?? '1') ?? 1;
+        final rowspan = int.tryParse(cell.attributes['rowspan'] ?? '1') ?? 1;
+        final text = cell.text.trim().replaceAll(RegExp(r'\s+'), ' ');
+        for (var dr = 0; dr < rowspan; dr++) {
+          for (var dc = 0; dc < colspan; dc++) {
+            cells.putIfAbsent(r + dr, () => <int, String>{})[col + dc] = text;
+          }
+        }
+        col += colspan;
+        if (col > maxCol) maxCol = col;
+      }
+    }
+
+    final grid = <List<String>>[];
+    for (var r = 0; r < rows.length; r++) {
+      final rowCells = cells[r] ?? const <int, String>{};
+      var width = maxCol;
+      for (final key in rowCells.keys) {
+        if (key + 1 > width) width = key + 1;
+      }
+      grid.add(List<String>.generate(width, (c) => rowCells[c] ?? ''));
+    }
+
+    // Страховка: если у строк нет класса, считаем строками студентов те,
+    // где первая ячейка — номер, а есть колонка с номером зачётки.
+    if (studentRows.isEmpty) {
+      for (var r = 0; r < grid.length; r++) {
+        if (RegExp(r'^\d+$')
+            .hasMatch(_normText(grid[r].isEmpty ? '' : grid[r][0]))) {
+          studentRows.add(r);
+        }
+      }
+    }
+
+    return _TableGrid(grid, studentRows, maxCol);
+  }
+
+  static String _normText(String text) =>
+      text.toLowerCase().replaceAll(RegExp(r'[\s\u00A0\u2007\u202F]+'), '');
 }

@@ -120,11 +120,14 @@ class RatingSession {
 
   /// Обновить состояние формы из HTML после ответа.
   ///
-  /// Если страница не содержит формы (например, страница ошибки),
-  /// прежнее состояние не затирается — иначе следующий postback уйдёт
-  /// с пустым `__VIEWSTATE` и сервер ответит 500.
+  /// Обновляем только со страницы со списком (там есть `cmbFacultets`).
+  /// Страница ведомости приносит свой `__VIEWSTATE`, и postback на
+  /// Default.aspx с ним падает с 500 — а заодно затирал бы список предметов,
+  /// который мы берём из последней страницы списка.
   void updateForm(String html) {
     final doc = html_parser.parse(html);
+
+    if (doc.querySelector('select[name\$="cmbFacultets"]') == null) return;
 
     final viewState =
         doc.querySelector('input[name="__VIEWSTATE"]')?.attributes['value'] ??

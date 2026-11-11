@@ -34,6 +34,7 @@ class _MapScreenState extends State<MapScreen> {
   int? _toFloor;
   RouteResult? _route;
   bool _panelOpen = true;
+  bool _floorSwitcherVisible = true;
 
   // Текущий вид.
   double _scale = 1.0;
@@ -307,9 +308,23 @@ class _MapScreenState extends State<MapScreen> {
               onPressed: _showDiagnostics,
             ),
           IconButton(
-            icon: Icon(_panelOpen ? Icons.expand_more : Icons.expand_less),
+            icon: Icon(
+              _panelOpen
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+            ),
             tooltip: _panelOpen ? 'Скрыть панель' : 'Показать панель',
             onPressed: () => setState(() => _panelOpen = !_panelOpen),
+          ),
+          IconButton(
+            icon: Icon(
+              _floorSwitcherVisible ? Icons.expand_more : Icons.expand_less,
+            ),
+            tooltip: _floorSwitcherVisible
+                ? 'Скрыть выбор этажа'
+                : 'Показать выбор этажа',
+            onPressed: () =>
+                setState(() => _floorSwitcherVisible = !_floorSwitcherVisible),
           ),
         ],
       ),
@@ -355,7 +370,8 @@ class _MapScreenState extends State<MapScreen> {
                 child: _buildMapView(transform, floor),
               ),
             ),
-            _buildFloorSwitcher(data),
+            if (_floorSwitcherVisible) _buildFloorSwitcher(data),
+            _buildMapControls(),
             if (_panelOpen) _buildPanel(),
           ],
         );
@@ -543,6 +559,89 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
+  /// Кнопки вида: сброс — слева сверху, масштаб — посередине слева.
+  Widget _buildMapControls() {
+    return Stack(
+      children: [
+        Positioned(
+          left: 12,
+          top: 12,
+          child: Row(
+            children: [
+              _mapButton(
+                icon: Icons.zoom_out_map,
+                tooltip: 'Сбросить вид',
+                onPressed: _resetView,
+              ),
+              const SizedBox(width: 6),
+              _mapButton(
+                icon: Icons.explore_outlined,
+                tooltip: 'Сбросить поворот',
+                onPressed: _rotation == 0
+                    ? null
+                    : () => setState(() => _rotation = 0),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          left: 12,
+          top: 0,
+          bottom: 0,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _mapButton(
+                  icon: Icons.add,
+                  tooltip: 'Приблизить',
+                  onPressed: () => _zoomBy(1.4),
+                ),
+                const SizedBox(height: 6),
+                _mapButton(
+                  icon: Icons.remove,
+                  tooltip: 'Отдалить',
+                  onPressed: () => _zoomBy(1 / 1.4),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// Кнопка-квадрат в стиле переключателя этажей.
+  Widget _mapButton({
+    required IconData icon,
+    required String tooltip,
+    required VoidCallback? onPressed,
+  }) {
+    final scheme = Theme.of(context).colorScheme;
+    final enabled = onPressed != null;
+    return Material(
+      color: scheme.surface,
+      borderRadius: BorderRadius.circular(10),
+      elevation: 2,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(10),
+        onTap: onPressed,
+        child: Tooltip(
+          message: tooltip,
+          child: SizedBox(
+            width: 44,
+            height: 40,
+            child: Icon(
+              icon,
+              size: 20,
+              color: enabled ? scheme.onSurface : scheme.onSurfaceVariant,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildPanel() {
     final route = _route;
     final scheme = Theme.of(context).colorScheme;
@@ -628,40 +727,9 @@ class _MapScreenState extends State<MapScreen> {
               const SizedBox(height: 8),
               Text('Маршрут не найден', style: TextStyle(color: scheme.error)),
             ],
-            const SizedBox(height: 4),
-            Row(
-              children: [
-                _smallButton(
-                  Icons.zoom_out,
-                  'Уменьшить',
-                  () => _zoomBy(1 / 1.4),
-                ),
-                const SizedBox(width: 4),
-                _smallButton(Icons.zoom_in, 'Увеличить', () => _zoomBy(1.4)),
-                const SizedBox(width: 4),
-                _smallButton(Icons.zoom_out_map, 'Сбросить вид', _resetView),
-                const Spacer(),
-                if (_rotation != 0)
-                  _smallButton(
-                    Icons.explore_outlined,
-                    'Выровнять',
-                    () => setState(() => _rotation = 0),
-                  ),
-              ],
-            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _smallButton(IconData icon, String tooltip, VoidCallback onPressed) {
-    return IconButton.outlined(
-      icon: Icon(icon, size: 20),
-      tooltip: tooltip,
-      onPressed: onPressed,
-      visualDensity: VisualDensity.compact,
-      constraints: const BoxConstraints(minWidth: 44, minHeight: 40),
     );
   }
 
