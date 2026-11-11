@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +7,11 @@ import '../../services/update/update_config.dart';
 import '../../services/update/update_service.dart';
 import '../../widgets/error_dialog.dart';
 
-/// Проверка обновлений и установка новой версии.
+/// Проверка обновлений и переход к скачиванию.
 ///
-/// Вызывается при запуске (молча) и кнопкой в настройках.
+/// Приложение только сообщает о новой версии и открывает ссылку на APK
+/// в браузере — установку выполняет система. Поэтому разрешение
+/// `REQUEST_INSTALL_PACKAGES` не нужно, и Play Protect не предупреждает.
 class UpdateFlow {
   const UpdateFlow._();
 
@@ -84,8 +84,14 @@ class UpdateFlow {
               children: [
                 Text(
                   size.isEmpty
-                      ? 'Скачать и установить сейчас?'
-                      : 'Скачать и установить сейчас? Размер: $size.',
+                      ? 'Скачать обновление в браузере?'
+                      : 'Скачать обновление в браузере? Размер: $size.',
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Файл скачается в «Загрузки». Откройте его и нажмите '
+                  '«Установить» — Android сам обновит приложение.',
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 if (info.notes.isNotEmpty) ...[
                   const SizedBox(height: 12),
@@ -107,165 +113,41 @@ class UpdateFlow {
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: const Text('Скачать и установить'),
+            child: const Text('Скачать'),
           ),
         ],
       ),
     );
 
     if (confirmed != true || !context.mounted) return;
-    await _install(context, info);
+    await _openDownload(context, info);
   }
 
-  static Future<void> _install(BuildContext context, UpdateInfo info) async {
-    // Android 8+ требует явного разрешения на установку из этого приложения.
-    final allowed = await _service.canInstall();
-    if (!context.mounted) return;
-    if (!allowed) {
-      await _showInstallPermissionDialog(context);
-      return;
+  static Future<void> _openDownload(
+    BuildContext context,
+    UpdateInfo info,
+  ) async {
+    var opened = await _service.openDownload(info);
+    if (!opened) {
+      // Прямая ссылка на файл не открылась — покажем страницу релиза.
+      opened = await _service.openReleasePage(info);
     }
-
-    final result = await showDialog<Object>(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => _DownloadDialog(info: info),
-    );
     if (!context.mounted) return;
 
-    if (result is File) {
-      final launched = await _service.install(result);
-      if (!context.mounted) return;
-      if (!launched) {
-        showErrorDialog(
-          context,
-          title: 'Не удалось запустить установку',
-          error: AppException(
-            'Система не открыла установщик. Откройте APK вручную '
-            'или разрешите установку из этого приложения.',
-          ),
-        );
-      }
+    if (!opened) {
+      showErrorDialog(
+        context,
+        title: 'Не удалось открыть браузер',
+        error: AppException(
+          'Откройте страницу релиза вручную: ${info.pageUrl}',
+        ),
+      );
       return;
     }
 
-    if (result is AppException) {
-      // Отмену пользователем не показываем как ошибку.
-      if (result.message.contains('отменена')) return;
-      showErrorDialog(
-        context,
-        title: 'Не удалось скачать обновление',
-        error: result,
-      );
-      return;
-    }
-    if (result != null) {
-      showErrorDialog(
-        context,
-        title: 'Не удалось скачать обновление',
-        error: result,
-      );
-    }
-  }
-
-  static Future<void> _showInstallPermissionDialog(BuildContext context) async {
-    final open = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        icon: const Icon(Icons.security_outlined, size: 32),
-        title: const Text('Разрешите установку'),
-        content: const Text(
-          'Android требует один раз разрешить установку обновлений '
-          'из этого приложения.\n\n'
-          'Откройте настройки и включите «Разрешить установку из этого '
-          'источника», затем вернитесь и нажмите «Проверить обновление» '
-          'ещё раз.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: const Text('Закрыть'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: const Text('Открыть настройки'),
-          ),
-        ],
-      ),
-    );
-    if (open == true) {
-      await _service.openInstallSettings();
-    }
-  }
-}
-
-/// Окно загрузки: показывает прогресс и возвращает файл или ошибку.
-class _DownloadDialog extends StatefulWidget {
-  const _DownloadDialog({required this.info});
-
-  final UpdateInfo info;
-
-  @override
-  State<_DownloadDialog> createState() => _DownloadDialogState();
-}
-
-class _DownloadDialogState extends State<_DownloadDialog> {
-  static const UpdateService _service = UpdateService();
-
-  double _progress = 0;
-  bool _cancelled = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _start();
-  }
-
-  Future<void> _start() async {
-    try {
-      final file = await _service.download(
-        widget.info,
-        onProgress: (value) {
-          if (!mounted) return;
-          setState(() => _progress = value);
-        },
-        isCancelled: () => _cancelled,
-      );
-      if (!mounted) return;
-      Navigator.of(context).pop(file);
-    } catch (error) {
-      if (!mounted) return;
-      Navigator.of(context)
-          .pop(error is AppException ? error : AppException.from(error));
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final percent = (_progress * 100).clamp(0, 100).round();
-    return PopScope(
-      canPop: false,
-      child: AlertDialog(
-        title: Text('Загрузка ${widget.info.version}'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            LinearProgressIndicator(value: _progress > 0 ? _progress : null),
-            const SizedBox(height: 12),
-            Text(
-              _progress > 0 ? '$percent%' : 'Подготовка…',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => setState(() => _cancelled = true),
-            child: const Text('Отмена'),
-          ),
-        ],
-      ),
+    showMessageSnackBar(
+      context,
+      'Файл скачивается в «Загрузки». Откройте его и нажмите «Установить».',
     );
   }
 }
@@ -315,7 +197,7 @@ class _UpdateSectionState extends State<UpdateSection> {
       return const ListTile(
         leading: Icon(Icons.system_update_outlined),
         title: Text('Обновления'),
-        subtitle: Text('Автообновление доступно только на Android'),
+        subtitle: Text('Обновления доступны только на Android'),
       );
     }
 

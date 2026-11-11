@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 
 import '../../models/update_info.dart';
 
-/// Мост к Android-части: версия приложения, установка APK, перезапуск.
+/// Мост к Android-части: версия приложения и открытие ссылки в браузере.
 ///
-/// Тихая установка обычному приложению недоступна — система показывает
-/// своё подтверждение. Наша задача — избавить от поиска файла в проводнике.
+/// Установку APK выполняет система — приложение не запрашивает разрешение
+/// на установку, поэтому Play Protect не предупреждает.
 class UpdaterPlatform {
   const UpdaterPlatform();
 
@@ -19,22 +19,7 @@ class UpdaterPlatform {
     );
   }
 
-  /// Разрешена ли установка из этого приложения (Android 8+).
-  Future<bool> canInstall() async =>
-      await _channel.invokeMethod<bool>('canInstall') ?? false;
-
-  /// Открыть системный экран «Установка неизвестных приложений».
-  Future<void> openInstallSettings() =>
-      _channel.invokeMethod<void>('openInstallSettings');
-
-  /// Каталог в кэше приложения, откуда FileProvider отдаст APK.
-  Future<String?> apkCacheDir() => _channel.invokeMethod<String>('apkCacheDir');
-
-  /// Запустить системный установщик для скачанного файла.
-  Future<bool> install(String path) async =>
-      await _channel.invokeMethod<bool>('install', {'path': path}) ?? false;
-
-  /// Перезапустить приложение (после установки).
-  Future<bool> restart() async =>
-      await _channel.invokeMethod<bool>('restart') ?? false;
+  /// Открывает ссылку во внешнем браузере. false — открыть не удалось.
+  Future<bool> openUrl(String url) async =>
+      await _channel.invokeMethod<bool>('openUrl', {'url': url}) ?? false;
 }

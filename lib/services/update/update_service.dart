@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
@@ -8,7 +7,11 @@ import '../net.dart';
 import 'update_config.dart';
 import 'updater_platform.dart';
 
-/// Поиск обновлений на GitHub и скачивание APK.
+/// Поиск обновлений на GitHub.
+///
+/// Приложение только сообщает о новой версии и открывает ссылку на APK
+/// в браузере: установку выполняет система. Так не требуется разрешение
+/// `REQUEST_INSTALL_PACKAGES`, из-за которого Play Protect предупреждал.
 class UpdateService {
   const UpdateService();
 
@@ -22,6 +25,13 @@ class UpdateService {
 
   /// Текущая установленная версия.
   Future<AppVersion> currentVersion() => _platform.appVersion();
+
+  /// Открывает страницу загрузки APK в браузере.
+  Future<bool> openDownload(UpdateInfo info) => _platform.openUrl(info.apkUrl);
+
+  /// Открывает страницу релиза (запасной вариант).
+  Future<bool> openReleasePage(UpdateInfo info) =>
+      _platform.openUrl(info.pageUrl);
 
   /// Последний релиз, если он новее установленного. Иначе null.
   Future<UpdateInfo?> check() async {
@@ -93,88 +103,4 @@ class UpdateService {
       sizeBytes: (apk['size'] as num?)?.toInt(),
     );
   }
-
-  /// Скачивает APK во внутренний кэш приложения.
-  ///
-  /// [onProgress] получает долю от 0 до 1, [isCancelled] прерывает загрузку.
-  Future<File> download(
-    UpdateInfo info, {
-    void Function(double progress)? onProgress,
-    bool Function()? isCancelled,
-  }) async {
-    final dirPath = await _platform.apkCacheDir();
-    if (dirPath == null || dirPath.isEmpty) {
-      throw AppException('Не удалось получить каталог для загрузки.');
-    }
-    final dir = Directory(dirPath);
-    await dir.create(recursive: true);
-
-    // Старые файлы обновлений больше не нужны.
-    if (await dir.exists()) {
-      await for (final entity in dir.list()) {
-        if (entity is File) {
-          try {
-            await entity.delete();
-          } catch (_) {
-            // Не критично, если не удалилось.
-          }
-        }
-      }
-    }
-
-    final safeName = info.assetName.replaceAll(RegExp(r'[^A-Za-z0-9._-]'), '_');
-    final file = File('${dir.path}/$safeName');
-
-    final client = http.Client();
-    IOSink? sink;
-    try {
-      final request = http.Request('GET', Uri.parse(info.apkUrl));
-      final response = await client.send(request).timeout(kDownloadTimeout);
-      if (response.statusCode != 200) {
-        throw AppException(
-          'Не удалось скачать файл (код ${response.statusCode}).',
-          kind: AppErrorKind.server,
-        );
-      }
-
-      final total = response.contentLength ?? info.sizeBytes ?? 0;
-      sink = file.openWrite();
-      var received = 0;
-      await for (final chunk in response.stream) {
-        if (isCancelled?.call() ?? false) break;
-        sink.add(chunk);
-        received += chunk.length;
-        if (total > 0) onProgress?.call(received / total);
-      }
-      await sink.flush();
-      await sink.close();
-      sink = null;
-
-      if (isCancelled?.call() ?? false) {
-        try {
-          await file.delete();
-        } catch (_) {}
-        throw AppException('Загрузка отменена.');
-      }
-      if (received == 0) {
-        throw AppException('Файл обновления скачался пустым.');
-      }
-      return file;
-    } on AppException {
-      rethrow;
-    } catch (error) {
-      throw AppException.from(error, action: 'Загрузка обновления');
-    } finally {
-      try {
-        await sink?.close();
-      } catch (_) {}
-      client.close();
-    }
-  }
-
-  Future<bool> canInstall() => _platform.canInstall();
-
-  Future<void> openInstallSettings() => _platform.openInstallSettings();
-
-  Future<bool> install(File file) => _platform.install(file.path);
 }
